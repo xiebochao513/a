@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="demo/css/index.css">
+	<!-- <script src="demo/js/app/common.js"></script> -->
+	   <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=ba2deb1fbddf2b6300f68fff7bdb0006"></script>
+	  <script data-main="demo/js/app/common" src="demo/js/require.js" defer async="true"></script>
+	
+
+</head>
+<body>
+	<div class="nav"><b  class="b">北京</b><span class="nav_span"><a class="nav_a2" href="#">[切换城市]</a><b class="b1">|</b><a class="nav_a2" href="#">同城帮首页</a></span>
+         <ul class="nav_ul">
+         	<li><a class="nav_a2" href="#">登录</a></li>
+         	<li><a class="nav_a2" href="#">注册</a></li>
+         	<li><a class="nav_a2" href="#">我的订单</a></li>
+         	<li><a class="nav_a2" href="#">客服电话：4000—399-360</a></li>
+         	<li class="block"><a class="nav_a2" href="#">客户服务▲</a><div class="nav_hidden">aa</div></li>
+         	<li><a class="nav_a3" href="#">投诉建议</a></li>
+         </ul>
+	</div>
+	<div class="box">
+	<img src="demo/img/images/25.png" class="fix">
+	<div class="big">
+	<div class="logo1">
+		<div class="logo1_nav">
+			<a class="first" href="#">二手良品</a>
+			<a href="#">手机回收</a>
+			<a href="#">手机维修</a>
+			<a href="#">电脑维修</a>
+			<a href="#">以旧换新</a>
+			<a href="#">手机试用</a>
+		</div>
+		<div class="img_change">
+		<div class="hover" id="hover" style="left:0">
+		<img src="demo/img/images/6.jpg" class="img_1"  id="img_change1">
+		<img src="demo/img/images/7.jpg" class="img_1"  id="img_change2">
+		<img src="demo/img/images/8.jpg"  class="img_1" id="img_change3">
+		<img src="demo/img/images/9.jpg" class="img_1"  id="img_change4">
+		<img src="demo/img/images/10.jpg"  class="img_1" id="img_change5">
+		</div>
+			<div class="green">
+			<div class="logo1_black1"><a href="#">修手机/Pad<b>></b></a><div class="hidden">qqqq</div></div>
+			<div class="logo1_black2"><a href="#">修电脑<b>></b></a><div class="hidden1">1111111</div></div>
+			<div class="logo1_black3"><a href="#">卖手机<b>></b></a><div class="hidden2">2222222</div></div>
+			<div class="logo1_black4"><a href="#">买二手机<b>></b></a><div class="hidden3">33333333</div></div>
+			</div>
+		</div>
+	</div>
+	<div class="logo2">
+		<div class="logo2_1">
+			<a href="#"><img src="demo/img/images/8.png"></a>
+			<a href="#"><img src="demo/img/images/9.png"></a>
+			<a href="#"><img src="demo/img/images/10.png"></a>
+            <a href="#"><img src="demo/img/images/11.png"></a>
+		</div>
+         <div class="div_p">
+		<p class="logo2_p1"><a href="#">热门手机回收</a></p>
+		<p class="logo2_p2"><a href="#">查看更多></a></p>
+         </div>
+         <div class="logo2_2">
+	        <a href="#"><img src="demo/img/images/12.png"></a>
+	        <a href="#"><img src="demo/img/images/13.png"></a>
+			<a href="#"><img src="demo/img/images/14.png"></a>
+			<a href="#"><img src="demo/img/images/15.png"></a>
+			<a href="#"><img src="demo/img/images/16.png"></a>
+            <a href="#"><img src="demo/img/images/17.png"></a>
+		</div>
+         <div class="div_p">
+		<p class="logo2_p1"><a href="#">二手良品精选</a></p>
+		<p class="logo2_p2"><a href="#">查看更多></a></p>
+         </div>
+         <div class="logo2_2">
+			<a href="#"><img src="demo/img/images/18.png"></a>
+			<a href="#"><img src="demo/img/images/19.png"></a>
+			<a href="#"><img src="demo/img/images/20.png"></a>
+            <a href="#"><img src="demo/img/images/21.png"></a>
+            <a href="#"><img src="demo/img/images/22.png"></a>
+            <a href="#"><img src="demo/img/images/23.png"></a>
+		</div>
+         <div class="div_p">
+		<p class="logo2_p1"><a href="#">到店维修</a></p>
+         </div>
+	</div>
+	<div class="main">
+		<form>
+		<select name="province" id="province" onchange="get()">
+			<option value="0">请选择所在城市</option>
+			<option value="山东省">北京</option>
+			<option value="东北省">沈阳</option>
+			<option value="安徽省">青岛</option>
+			<option value="广东省">广东</option>
+			<option value="浙江省">南京</option>
+		</select>
+		<select id="city" name="city">
+			<option value="0">请选择区县</option>
+		</select>
+		<input type="text" value="输入您的位置查找附近商家" class="main_txt"/>
+		<a href="#"><div class="find">搜索</div></a>
+	</form>
+	<div class="main_div">
+		<a href="#"><div class="main_1">默认排序</div></a>
+		<a href="#"><div class="main_1">按成交量</div></a>
+		<a href="#"><div class="main_1">按人气</div></a>
+		<a href="#"><div class="main_1"><input type="checkbox"/>现行赔付</div></a>
+		<img src="demo/img/images/33.png" id="btn_map" />
+
+		<div id="big_map">
+		<div id="hidden_map"></div>
+		<div id="hidden_2"></div>
+		<div id="hidden_3"></div>
+		</div>
+		<div id="div11">
+		<div style="width:25px;height:25px;" class="div_mm" id="btn1">1</div>
+		<div style="width:25px;height:25px;" class="div_mm" id="btn2">2</div>
+		<div style="width:25px;height:25px;" class="div_mm" id="btn3">3</div>
+			</div>
+		<div id="hidden_div"><b id="close">关闭</b></div>
+        
+	</div>
+	<div id="box" style="width: 900px;height: 1000px;overflow: hidden;">
+		<!--<div class="main_div2">
+			<a href="#"><img src="demo/img/images/27.jpg"></a>
+			<br/>
+			<h4>顺通电脑维修</h4> 
+			<p style="display:inline-block:">&nbsp;店铺等级:</p>
+			<p class="p1">主营：电脑维修，电脑周边配件，系统维护，网络安装，打...</p>
+			<p class="p2">地址：北京通州区果园环岛葛布店北里10号楼底商。</p>
+			<div class="img_3">
+			<img src="demo/img/images/31.png"><a href="#">现行赔付</a>
+			<br/><br/>
+			<img class="img_4" src="demo/img/images/32.png"><a href="#">同城帮认证</a>
+			<br/><br/>
+			<p>人气：842876次浏览</p>
+			</div>
+		</div>-->
+		
+		<!-- <div class="main_div2">
+			<a href="#"><img src="demo/img/images/28.jpg"></a>
+			<br/>
+			<h4>联金城维修中心</h4> 
+			<p style="display:inline-block:">&nbsp;店铺等级:</p>
+			<p class="p1">主营：电脑维修，电脑周边配件，系统维护，网络安装，打...</p>
+			<p class="p2">地址：北京通州区果园环岛葛布店北里10号楼底商。</p>
+			<div class="img_3">
+			<img src="demo/img/images/31.png"><a href="#">现行赔付</a>
+			<br/><br/>
+			<img class="img_4" src="demo/img/images/32.png"><a href="#">同城帮认证</a>
+			<br/><br/>
+			<p>人气：842876次浏览</p>
+			</div>
+		</div>
+		<div class="main_div2">
+			<a href="#"><img src="demo/img/images/29.jpg"></a>
+			<br/>
+			<h4>顺通电脑维修</h4> 
+			<p style="display:inline-block:">&nbsp;店铺等级:</p>
+			<p class="p1">主营：电脑维修，电脑周边配件，系统维护，网络安装，打...</p>
+			<p class="p2">地址：北京通州区果园环岛葛布店北里10号楼底商。</p>
+			<div class="img_3">
+			<img src="demo/img/images/31.png"><a href="#">现行赔付</a>
+			<br/><br/>
+			<img class="img_4" src="demo/img/images/32.png"><a href="#">同城帮认证</a>
+			<br/><br/>
+			<p>人气：842876次浏览</p>
+			</div>
+		</div>
+		<div class="main_div2">
+			<a href="#"><img src="demo/img/images/30.jpg"></a>
+			<br/>
+			<h4>顺通电脑维修</h4> 
+			<p style="display:inline-block:">&nbsp;店铺等级:</p>
+			<p class="p1">主营：电脑维修，电脑周边配件，系统维护，网络安装，打...</p>
+			<p class="p2">地址：北京通州区果园环岛葛布店北里10号楼底商。</p>
+			<div class="img_3">
+			<img src="demo/img/images/31.png"><a href="#">现行赔付</a>
+			<br/><br/>
+			<img class="img_5" src="demo/img/images/32.png"><a href="#">同城帮认证</a>
+			<br/><br/>
+			<p>人气：842876次浏览</p>
+			</div>
+		</div>
+		<div class="main_div2">
+			<a href="#"><img src="demo/img/images/31.jpg"></a>
+			<br/>
+			<h4>顺通电脑维修</h4> 
+			<p style="display:inline-block:">&nbsp;店铺等级:</p>
+			<p class="p1">主营：电脑维修，电脑周边配件，系统维护，网络安装，打...</p>
+			<p class="p2">地址：北京通州区果园环岛葛布店北里10号楼底商。</p>
+			<div class="img_3">
+			<img src="demo/img/images/31.png"><a href="#">现行赔付</a>
+			<br/><br/>
+			<img class="img_4" src="demo/img/images/32.png"><a href="#">同城帮认证</a>
+			<br/><br/>
+			<p>人气：842876次浏览</p>
+			</div> -->
+		</div>
+		</div>
+		<div class="num_box">
+			<div class="num"><a href="#">1</a></div>
+			<div class="num"><a href="#">2</a></div>
+			<div class="num"><a href="#">3</a></div>
+			<div class="num"><a href="#">4</a></div>
+			<div class="num"><a href="#">5</a></div>
+			<div class="num"><a href="#">6</a></div>
+			<div class="num"><a href="#">7</a></div>
+			<div class="num"><a href="#">8</a></div>
+			<div class="num"><a href="#">9</a></div>
+			<div class="num"><a href="#">10</a></div>
+			<div class="num_2"><a href="#"><p>下一页》</p></a></div>
+			</div>
+		<div class="menu">
+			<div class="menu_first">商家好评榜</div>
+			<div class="menu_second"></div>
+			<div class="menu_second"></div>
+			<div class="menu_second"></div>
+			<div class="menu_second"></div>
+			<div class="menu_second"></div>
+			<div class="menu_second"></div>
+			<div class="menu_second"></div>
+		</div>
+	</div>
+	<div class="foot">
+	<div class="footer">
+		<div class="footer_0 sprit sprit1"></div>
+		<div class="footer_0 footer_1">购物指南</div>
+		<div class="footer_0 sprit sprit2"></div>
+		<div class="footer_0 footer_2">支付方式</div>
+		<div class="footer_0 sprit sprit3"></div>
+		<div class="footer_0 footer_3">售后服务</div>
+		<div class="footer_0 sprit sprit4"></div>
+		<div class="footer_0 footer_4">特色保障</div>
+		<div class="footer_0 sprit sprit5"></div>
+		<div class="footer_0 footer_5">商家合作</div>
+	</div>
+	</div>
+	</div>
+	</div>
+    <script type="text/javascript">
+    //高德地图 添加监听器
+	// var map1=new AMap.Map("hidden_map");
+	// var map1=new AMap.Map("hidden_map",{
+	// 		zoom:10,
+	// 		center:[116.39,39.9]
+	// });
+	// function over(){
+	// 	var div1=document.getElementById("hidden_map")
+	// 	div1.style.display="block";
+ //       }
+ //        var btn=document.getElementById("btn_map");
+ // 		btn.addEventListener("click",over,false);
+ 
+     </script>
+</body>
+</html>
